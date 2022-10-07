@@ -1,14 +1,25 @@
 package com.example.day02springproject.Controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.example.day02springproject.Entity.UserData;
+import org.springframework.web.bind.annotation.*;
 
 @RestController // which control all the api's
 public class RestApiController {
-        @GetMapping("/hello")
-        public String hello() {
-            return "Hello from Bridgelabz";
-        }
+
+    @GetMapping("/hello")
+    public String hello() {
+        return "Hello from Bridgelabz";
+    }
+
+    @GetMapping("/query")
+    public String helloQuery(@RequestParam(value = "name") String name){
+        return "Hello " + name + " !";
+    }
+
+    @RequestMapping(value = {"/anotherQuery"}, method = RequestMethod.GET)
+    public String newQuery(@RequestParam (value = "newName") String newName){
+        return "Hello " + newName + " !";
+    }
 
 }
 
