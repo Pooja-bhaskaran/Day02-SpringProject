@@ -21,5 +21,10 @@ public class RestApiController {
         return "Hello " + newName + " !";
     }
 
+    @GetMapping("/path/{name}")
+    public String pathVar(@PathVariable String name ){
+        return "Hello " + name + " from Bridgelabz !!";
+    }
+
 }
 
