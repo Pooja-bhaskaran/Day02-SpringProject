@@ -26,5 +26,10 @@ public class RestApiController {
         return "Hello " + name + " from Bridgelabz !!";
     }
 
+    @PostMapping("/post")
+    public String fullName(@RequestBody UserData userData){
+        return "Hello " + userData.getFirstName() + " " + userData.getLastName() + " from Bridgelabz !!";
+    }
+
 }
 
