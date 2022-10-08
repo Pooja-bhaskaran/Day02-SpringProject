@@ -31,5 +31,10 @@ public class RestApiController {
         return "Hello " + userData.getFirstName() + " " + userData.getLastName() + " from Bridgelabz !!";
     }
 
+    @PutMapping("/put/{firstName}")
+    public String pathAndQuery(@PathVariable String firstName , @RequestParam String lastName){
+        return "Hello " + firstName + " " + lastName + " from Bridgelabz !!";
+    }
+
 }
 
